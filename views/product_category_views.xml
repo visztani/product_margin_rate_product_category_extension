@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_product_category_form_with_margin" model="ir.ui.view">
+        <field name="name">product.category.form.with.margin</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Margin Settings">
+                    <field name="min_margin_rate" placeholder="Enter minimum margin rate" />
+                    <!-- Add a button to trigger margin difference recalculation -->
+                    <button name="recalculate_margin_difference"
+                            string="Recalculate Margin Difference"
+                            type="object"
+                            class="oe_highlight"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
