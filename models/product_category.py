@@ -14,6 +14,6 @@ class ProductCategory(models.Model):
         for product in products:
             product._compute_margin_difference()  # Assuming you have this method defined in ProductProduct model
 
-        product_templates = self.env['product.product'].search([('categ_id', '=', self.id)])
+        product_templates = self.env['product.template'].search([('categ_id', '=', self.id)])
         for template in product_templates:
             template._compute_margin_difference()
